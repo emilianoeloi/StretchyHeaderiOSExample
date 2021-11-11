@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol HeaderViewDelegate {
+    func showHide()
+}
+
 class HeaderView: UIView {
+    
+    // MARK: - Delegate
+    public var delegate: HeaderViewDelegate?
     
     // MARK: - CreateUI
     private let titleLabel: UIView = {
@@ -21,15 +28,43 @@ class HeaderView: UIView {
         var summary = UIView()
         summary.translatesAutoresizingMaskIntoConstraints = false
         summary.backgroundColor = UIColor(red: 0.05, green: 0.00, blue: 0.00, alpha: 1.00)
+        summary.isHidden = false
         return summary
     }()
-    private let containerStackView: UIStackView = {
+    private let showHideButton: UIButton = {
+        var showHide = UIButton()
+        showHide.translatesAutoresizingMaskIntoConstraints = false
+        showHide.backgroundColor = UIColor(red: 1.00, green: 0.20, blue: 0.20, alpha: 1.00)
+        showHide.addTarget(self, action: #selector(pressed), for: .touchUpInside)
+        return showHide
+    }()
+    private let containerDetailStackView: UIStackView = {
         var container = UIStackView()
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.spacing = 5
         return container
     }()
+    private let containerStackView: UIStackView = {
+        var container = UIStackView()
+        container.translatesAutoresizingMaskIntoConstraints = false
+        container.alignment = .top
+        container.spacing = 5
+        return container
+    }()
+    
+    @objc func pressed() {
+        if summaryLabel.isHidden {
+            summaryLabel.isHidden = false
+        } else {
+            summaryLabel.isHidden = true
+        }
+        delegate?.showHide()
+    }
+    
+    public func getHeight() -> CGFloat {
+        return containerStackView.frame.size.height
+    }
 
     // MARK: - Setup
     private func setup() {
@@ -37,8 +72,12 @@ class HeaderView: UIView {
         setupConstraints()
     }
     private func setupSubview() {
-        containerStackView.addArrangedSubview(titleLabel)
-        containerStackView.addArrangedSubview(summaryLabel)
+        containerDetailStackView.addArrangedSubview(titleLabel)
+        containerDetailStackView.addArrangedSubview(summaryLabel)
+        
+        containerStackView.addArrangedSubview(containerDetailStackView)
+        containerStackView.addArrangedSubview(showHideButton)
+        
         self.addSubview(containerStackView)
     }
     private func setupConstraints() {
@@ -48,7 +87,9 @@ class HeaderView: UIView {
             containerStackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             
             titleLabel.heightAnchor.constraint(equalToConstant: 30),
-            summaryLabel.heightAnchor.constraint(equalToConstant: 30)
+            summaryLabel.heightAnchor.constraint(equalToConstant: 30),
+            showHideButton.heightAnchor.constraint(equalToConstant: 30),
+            showHideButton.widthAnchor.constraint(equalToConstant: 30)
         ])
     }
     

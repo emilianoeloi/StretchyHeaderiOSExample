@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC3CC0B2273C4C8700BF3DA4 /* UITableViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CC0B1273C4C8700BF3DA4 /* UITableViewController+Extension.swift */; };
+		AC3CC0B5273C98EC00BF3DA4 /* ViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CC0B4273C98EC00BF3DA4 /* ViewAction.swift */; };
+		AC3CC0B7273C9A1400BF3DA4 /* ActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CC0B6273C9A1400BF3DA4 /* ActionController.swift */; };
+		AC3CC0B9273C9AF300BF3DA4 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CC0B8273C9AF300BF3DA4 /* ActionView.swift */; };
+		AC3CC0BB273C9BD300BF3DA4 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CC0BA273C9BD300BF3DA4 /* ActionViewController.swift */; };
 		AC45BBC727398FF6008F1745 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45BBC627398FF6008F1745 /* SectionView.swift */; };
 		AC45BBCB27399234008F1745 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45BBCA27399234008F1745 /* CellView.swift */; };
 		AC45BBCD273993E9008F1745 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45BBCC273993E9008F1745 /* PlayerView.swift */; };
@@ -31,6 +36,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC3CC0B1273C4C8700BF3DA4 /* UITableViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewController+Extension.swift"; sourceTree = "<group>"; };
+		AC3CC0B4273C98EC00BF3DA4 /* ViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAction.swift; sourceTree = "<group>"; };
+		AC3CC0B6273C9A1400BF3DA4 /* ActionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionController.swift; sourceTree = "<group>"; };
+		AC3CC0B8273C9AF300BF3DA4 /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
+		AC3CC0BA273C9BD300BF3DA4 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		AC45BBC627398FF6008F1745 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		AC45BBCA27399234008F1745 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		AC45BBCC273993E9008F1745 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -67,6 +77,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC3CC0B0273C4C6A00BF3DA4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AC3CC0B1273C4C8700BF3DA4 /* UITableViewController+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AC3CC0B3273C98D200BF3DA4 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				AC3CC0B4273C98EC00BF3DA4 /* ViewAction.swift */,
+				AC3CC0B6273C9A1400BF3DA4 /* ActionController.swift */,
+				AC3CC0B8273C9AF300BF3DA4 /* ActionView.swift */,
+				AC3CC0BA273C9BD300BF3DA4 /* ActionViewController.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		AC45BBCE273994A9008F1745 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +121,7 @@
 		ACA97D2D273941A9001416D1 /* PlayerVideoPlaylist */ = {
 			isa = PBXGroup;
 			children = (
+				AC3CC0B3273C98D200BF3DA4 /* Delegate */,
 				AC45BBCF273994BA008F1745 /* Controller */,
 				AC45BBCE273994A9008F1745 /* View */,
 				ACA97D30273945EB001416D1 /* MainVideoViewController.swift */,
@@ -118,6 +148,7 @@
 		C25A8AB42472C3A100050654 /* StretchyHeaderExample */ = {
 			isa = PBXGroup;
 			children = (
+				AC3CC0B0273C4C6A00BF3DA4 /* Extension */,
 				ACA97D2D273941A9001416D1 /* PlayerVideoPlaylist */,
 				C27BA0B22475868B00F82E6D /* ScrollView */,
 				C27BA0B12475867700F82E6D /* CollectionView */,
@@ -239,16 +270,21 @@
 				AC45BBD52739D0DE008F1745 /* SectionTableViewHeader.swift in Sources */,
 				C28BBFA124754262008D6745 /* CollectionView.swift in Sources */,
 				C25A8ACA2472C44600050654 /* StretchyTableHeaderView.swift in Sources */,
+				AC3CC0B5273C98EC00BF3DA4 /* ViewAction.swift in Sources */,
+				AC3CC0B9273C9AF300BF3DA4 /* ActionView.swift in Sources */,
 				ACA97D2F273941E1001416D1 /* HeaderView.swift in Sources */,
 				C25A8AB62472C3A100050654 /* AppDelegate.swift in Sources */,
 				AC45BBD72739D592008F1745 /* CellTableViewCell.swift in Sources */,
 				AC45BBC727398FF6008F1745 /* SectionView.swift in Sources */,
 				AC45BBCD273993E9008F1745 /* PlayerView.swift in Sources */,
 				AC45BBCB27399234008F1745 /* CellView.swift in Sources */,
+				AC3CC0B2273C4C8700BF3DA4 /* UITableViewController+Extension.swift in Sources */,
+				AC3CC0B7273C9A1400BF3DA4 /* ActionController.swift in Sources */,
 				C25A8AB82472C3A100050654 /* SceneDelegate.swift in Sources */,
 				C27BA0B8247599C600F82E6D /* MainViewController.swift in Sources */,
 				C27BA0BA2475A02600F82E6D /* ScrollView.swift in Sources */,
 				AC45BBD1273994F1008F1745 /* PlayerViewController.swift in Sources */,
+				AC3CC0BB273C9BD300BF3DA4 /* ActionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
